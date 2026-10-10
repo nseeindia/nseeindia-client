@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "frontend/Dockerfile"
+      - "Dockerfile"
       - ".github/workflows/ghcr-test.yml"
 
 permissions:
@@ -15,6 +15,7 @@ permissions:
 jobs:
   publish-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +30,7 @@ jobs:
       - name: Build and push test image
         uses: docker/build-push-action@v6
         with:
-          context: ./frontend
+          context: .
+          file: ./Dockerfile
           push: true
           tags: ghcr.io/nsee-india/nsee-ghcr-test:latest
