@@ -31,4 +31,4 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ghcr.io/YOUR_GITHUB_USERNAME/nsee-ghcr-test:latest
+          tags: ghcr.io/nsee-india/nsee-ghcr-test:latest
